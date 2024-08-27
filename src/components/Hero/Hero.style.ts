@@ -21,7 +21,3 @@ export const StyledTitleHero = styled.div`
         font-weight: lighter;
     }
 `;
-
-export const StyledBtnIniciarAtendimento = styled.button`
-    
-`;

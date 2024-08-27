@@ -1,5 +1,6 @@
+import { Button } from "../Button/Button"
 import { Menu } from "../Menu/Menu"
-import { StyledBtnIniciarAtendimento, StyledHero, StyledTitleHero } from "./Hero.style"
+import { StyledHero, StyledTitleHero } from "./Hero.style"
 
 interface HeroProps{
     img: string
@@ -13,7 +14,7 @@ export const Hero = ({img, children, btnAtendimento}: HeroProps) => {
             <Menu />
             <StyledTitleHero>
                 <h1>{children}</h1>
-                {btnAtendimento && <StyledBtnIniciarAtendimento>Iniciar Atendimento</StyledBtnIniciarAtendimento>}
+                {btnAtendimento && <Button>Iniciar Atendimento</Button>}
             </StyledTitleHero>
         </StyledHero>
     )
