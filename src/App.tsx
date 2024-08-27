@@ -1,9 +1,18 @@
+import { lazy, Suspense } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+const LazyHome = lazy(() => import("./pages/Home"));
+
 function App() {
-  return (
-    <>
-      <p> Web Site Improve it usando react-ts</p>
-    </>
-  )
+    return(
+        <BrowserRouter>
+            <Suspense fallback={<>Carregando</>}>
+                <Routes>
+                    <Route path="/" element={<LazyHome />} />
+                </Routes>
+            </Suspense>
+        </BrowserRouter>
+    )
 }
 
-export default App
+export default App;
