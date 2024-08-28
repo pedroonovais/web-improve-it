@@ -14,10 +14,5 @@ export const StyledTitleHero = styled.div`
     justify-content: center;
     height: 100%;
     margin: 0 1rem;
-    line-height: 2.5rem;
-    
-
-    & h2{
-        font-weight: lighter;
-    }
+    line-height: 2.1rem;
 `;

@@ -13,7 +13,7 @@ export const Hero = ({img, children, btnAtendimento}: HeroProps) => {
         <StyledHero bgImg={img}>
             <Menu />
             <StyledTitleHero>
-                <h1>{children}</h1>
+                <h2>{children}</h2>
                 {btnAtendimento && <Button>Iniciar Atendimento</Button>}
             </StyledTitleHero>
         </StyledHero>
