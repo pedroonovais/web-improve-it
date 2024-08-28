@@ -30,12 +30,28 @@ export const StyledNavegation = styled.ul<{ isOpen: boolean }>`
     color: var(--primary-color);
     top: 6rem;
     transition: 250ms;
-    left: ${({isOpen}) => (isOpen ? '0' : '-100%')};
+    top: ${({isOpen}) => (isOpen ? '30' : '-100%')};
     
     & li{
         text-align: center;
-        padding: 0.5rem;
-        background-color: white;
-        border: 1px solid var(--primary-color);
+        padding: 0.8rem;
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    & a{
+        color: white;
+        text-decoration: none;
+    }
+    
+    & a:visited{
+        color: white;
+        text-decoration: none;
+    }
+    
+    & a:active{
+        color: white;
+        text-decoration: none;
     }
 `;
