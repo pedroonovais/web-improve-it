@@ -5,6 +5,7 @@ import bannerImage from "/bannerHome.png"
 import alinhamentoImage from "/alinhamento.png"
 import carrosImage from "/carros.png"
 import { Hero } from "../../components/Hero/Hero";
+import { Footer } from "../../components/Footer/Footer";
 
 export default function Home(){
     const textHero = "Bem-vindo ao CAP – Centro de Assistência Porto Seguro 😊. Queremos te oferecer a melhor opção em qualidade e custo para a manutenção de seu veículo.🚗"
@@ -31,6 +32,7 @@ export default function Home(){
                     </p>
                 </Card>
             </Section>
+            <Footer />
         </>
     )
 }
