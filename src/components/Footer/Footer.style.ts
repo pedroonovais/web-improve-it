@@ -16,6 +16,7 @@ export const StyledGroupLinks = styled.div`
     & a{
         text-decoration: none;
         font-weight: lighter;
+        color: white;
     }
 
     & a:visited{

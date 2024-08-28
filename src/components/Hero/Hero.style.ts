@@ -15,4 +15,8 @@ export const StyledTitleHero = styled.div`
     height: 100%;
     margin: 0 1rem;
     line-height: 2.1rem;
+
+    & button{
+        width: 100%
+    }
 `;

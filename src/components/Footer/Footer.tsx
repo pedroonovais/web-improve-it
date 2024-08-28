@@ -19,6 +19,7 @@ export const Footer = () => {
             <p><strong>Sobre a improve it</strong></p>
             <ul>
                 <li><Link to="/integrantes">Integrantes</Link></li>
+                <li><Link to="/atendimento">Iniciar o atendimento</Link></li>
             </ul>
         </StyledGroupLinks>
         <StyledGroupLinks>

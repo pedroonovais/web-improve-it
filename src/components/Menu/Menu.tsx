@@ -21,7 +21,7 @@ export const Menu = () => {
             </StyledHamburger>
             <StyledNavegation isOpen={isOpen}>
                 <Link to="/integrantes"><li>Integrantes</li></Link>
-                <Link to="/"><li>Iniciar Atendimento</li></Link>
+                <Link to="/atendimento"><li>Iniciar Atendimento</li></Link>
             </StyledNavegation>
         </StyledNav>
     )

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Button } from "../Button/Button"
 import { Menu } from "../Menu/Menu"
 import { StyledHero, StyledTitleHero } from "./Hero.style"
@@ -14,7 +15,7 @@ export const Hero = ({img, children, btnAtendimento}: HeroProps) => {
             <Menu />
             <StyledTitleHero>
                 <h2>{children}</h2>
-                {btnAtendimento && <Button>Iniciar Atendimento</Button>}
+                {btnAtendimento && <Link to="/atendimento"><Button>Iniciar Atendimento</Button></Link>}
             </StyledTitleHero>
         </StyledHero>
     )
