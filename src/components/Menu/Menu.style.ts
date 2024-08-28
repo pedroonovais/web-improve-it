@@ -18,11 +18,24 @@ export const StyledHamburger = styled.div`
     align-items: center;
     justify-content: center; 
     gap: 0.5rem;
+    font-size: 2.8rem;
+`;
 
-    & div {
+export const StyledNavegation = styled.ul<{ isOpen: boolean }>`
+    position: absolute;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    list-style: none;
+    color: var(--primary-color);
+    top: 6rem;
+    transition: 250ms;
+    left: ${({isOpen}) => (isOpen ? '0' : '-100%')};
+    
+    & li{
+        text-align: center;
+        padding: 0.5rem;
         background-color: white;
-        height: 0.3rem;
-        width: 2.5rem;
-        border-radius: 25px;
+        border: 1px solid var(--primary-color);
     }
 `;
