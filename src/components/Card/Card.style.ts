@@ -19,7 +19,7 @@ export const StyledCard = styled.div`
         margin-top: 1rem;
     }
 
-    & p{
+    & p, h3, a{
         margin-top: 0.5rem;
     }
 

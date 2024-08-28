@@ -1,6 +1,7 @@
 import { StyledFooter, StyledGroupLinks } from "./Footer.style"
 
 import footerLogo from "../../assets/logoImproveIt.png";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
     return (
@@ -17,7 +18,7 @@ export const Footer = () => {
         <StyledGroupLinks>
             <p><strong>Sobre a improve it</strong></p>
             <ul>
-                <li><a href="integrantes.html">Integrantes</a></li>
+                <li><Link to="/integrantes">Integrantes</Link></li>
             </ul>
         </StyledGroupLinks>
         <StyledGroupLinks>

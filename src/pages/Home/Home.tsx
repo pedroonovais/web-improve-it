@@ -1,19 +1,17 @@
 import { Card } from "../../components/Card/Card";
 import { Section } from "../../components/Section/Section";
 
-import bannerImage from "/bannerHome.png"
-import alinhamentoImage from "/alinhamento.png"
-import carrosImage from "/carros.png"
+import bannerImage from "/bannerHome.jpg"
+import alinhamentoImage from "/alinhamento.jpg"
+import carrosImage from "/carros.jpg"
 import { Hero } from "../../components/Hero/Hero";
 import { Footer } from "../../components/Footer/Footer";
 
 export default function Home(){
-    const textHero = "Bem-vindo ao CAP – Centro de Assistência Porto Seguro 😊. Queremos te oferecer a melhor opção em qualidade e custo para a manutenção de seu veículo.🚗"
-    
     return(
         <>
             <Hero img={bannerImage} btnAtendimento={true}>
-                {textHero}
+                {"Bem-vindo ao CAP – Centro de Assistência Porto Seguro 😊. Queremos te oferecer a melhor opção em qualidade e custo para a manutenção de seu veículo.🚗"}
             </Hero>
             <Section>
                 <Card>

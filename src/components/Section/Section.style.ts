@@ -7,4 +7,8 @@ export const StyledSection = styled.section`
         margin: 0 auto;
         text-align: center;
     }
+
+    & a{
+        display: flex;
+    }
 `;
