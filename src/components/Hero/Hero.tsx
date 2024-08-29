@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { Button } from "../Button/Button"
 import { Menu } from "../Menu/Menu"
-import { StyledHero, StyledTitleHero } from "./Hero.style"
+import { StyledHero, StyledHeroContent } from "./Hero.style"
 
 interface HeroProps{
     img: string
@@ -14,10 +14,10 @@ export const Hero = ({img, children, btnAtendimento, height}: HeroProps) => {
     return (
         <StyledHero bgImg={img} height={height}>
             <Menu />
-            <StyledTitleHero>
-                <h2>{children}</h2>
+            <StyledHeroContent>
+                {children}
                 {btnAtendimento && <Link to="/atendimento"><Button>Iniciar Atendimento</Button></Link>}
-            </StyledTitleHero>
+            </StyledHeroContent>
         </StyledHero>
     )
 }

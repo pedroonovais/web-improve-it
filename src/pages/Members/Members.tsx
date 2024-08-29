@@ -10,7 +10,7 @@ export default function Members(){
     return (
         <>
             <Hero img={bannerIntegrantes} btnAtendimento={false}>
-                {"Conheça nossa equipe, dê uma olhada nos rostos que tornam tudo possível na improve it!"}
+                <h2>Conheça nossa equipe, dê uma olhada nos rostos que tornam tudo possível na improve it!</h2>
             </Hero>
             <Section>
                 <h1>Integrantes:</h1>

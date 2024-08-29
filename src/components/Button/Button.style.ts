@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const StyledButton = styled.button`
-    background-color: var(--primary-color);
-    color: white;
+export const StyledButton = styled.button<{bgColor?: string; txtColor?: string}>`
+    background-color: ${({bgColor}) => (bgColor ? bgColor : 'var(--primary-color)')};
+    color: ${({txtColor}) => (txtColor ? txtColor : 'white')};
     border-style: none;
     height: 4rem;
     font-size: 1.5rem;

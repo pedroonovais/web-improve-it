@@ -11,7 +11,7 @@ export default function Home(){
     return(
         <>
             <Hero img={bannerImage} btnAtendimento={true}>
-                {"Bem-vindo ao CAP – Centro de Assistência Porto Seguro 😊. Queremos te oferecer a melhor opção em qualidade e custo para a manutenção de seu veículo.🚗"}
+                <h2>Bem-vindo ao CAP – Centro de Assistência Porto Seguro 😊. Queremos te oferecer a melhor opção em qualidade e custo para a manutenção de seu veículo.🚗</h2>
             </Hero>
             <Section>
                 <Card>
