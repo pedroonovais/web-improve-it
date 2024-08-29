@@ -5,4 +5,5 @@ export const StyledFlexRow = styled.div`
     gap: 1rem;
     justify-content: center;
     align-items: center;
+    margin-top: 0.5rem;
 `

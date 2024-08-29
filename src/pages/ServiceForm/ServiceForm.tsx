@@ -4,6 +4,7 @@ import { FormSteps } from "../../components/FormSteps/FormSteps"
 import { Hero } from "../../components/Hero/Hero"
 import bannerAtendimento from "/bannerAtendimento.jpg"
 import { FlexRow } from "../../components/FlexRow/FlexRow"
+import { FormLayout } from "../../components/FormLayout/FormLayout"
 
 export default function ServiceForm(){
     const [step, setStep] = useState(1)
@@ -22,7 +23,9 @@ export default function ServiceForm(){
     
     return (
         <Hero img={bannerAtendimento} height="100vh">
-            <FormSteps index={step} />
+            <FormLayout>
+                <FormSteps index={step} />
+            </FormLayout>
             <FlexRow>
                 <Button bgColor="white" txtColor="var(--primary-color)" onClick={prevStep} >Voltar</Button>
                 <Button onClick={nextStep} >Continuar</Button>
