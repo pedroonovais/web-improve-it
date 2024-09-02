@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Button } from "../../components/Button/Button"
+import { Checkbox } from "../../components/Checkbox/Checkbox"
 import { FlexRow } from "../../components/FlexRow/FlexRow"
 import { FormLayout } from "../../components/FormLayout/FormLayout"
 import { Hero } from "../../components/Hero/Hero"
@@ -46,7 +47,7 @@ export default function ServiceForm() {
                 return (
                     <>
                         <h2>Escolha o serviço que deseja realizar (pode escolher mais de um):</h2>
-
+                        <Checkbox name="teste" id="teste" value="teste1">Teste</Checkbox>
                     </>
                 )
             default:
