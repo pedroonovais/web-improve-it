@@ -9,7 +9,7 @@ import { Footer } from "../../components/Footer/Footer";
 export default function Members(){
     return (
         <>
-            <Hero img={bannerIntegrantes} btnAtendimento={false}>
+            <Hero img={bannerIntegrantes} btnAtendimento={false} height="95vh">
                 <h2>Conheça nossa equipe, dê uma olhada nos rostos que tornam tudo possível na improve it!</h2>
             </Hero>
             <Section>

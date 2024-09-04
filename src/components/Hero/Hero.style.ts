@@ -6,7 +6,7 @@ export const StyledHero = styled.header<{bgImg : string; height?: string}>`
     color: white;
     background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${props => props.bgImg}) no-repeat center;
     background-size: cover;
-    height: ${({ height }) => height || '95vh'};
+    height: ${({ height }) => height || 'auto'};
 
     & h1, h2, h3, h4, h5, h6{
         line-height: 2.1rem;

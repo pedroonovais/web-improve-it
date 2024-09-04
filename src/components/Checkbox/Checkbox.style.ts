@@ -6,12 +6,15 @@ export const StyledCheckbox = styled.input.attrs({ type: 'checkbox' })`
     pointer-events: none;
 `
 
-export const StyledLabel = styled.label`
-    display: inline-block;
+export const StyledLabel = styled.label<{ checked: boolean }>`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    width: 16rem;
-    height: 3rem;
     padding: 5px 10px;
     border: 1px solid #ccc;
-    margin: 0;
+    color: ${({checked}) => (checked ? 'black' : 'white')};
+    background-color: ${({checked}) => (checked ? 'white' : 'transparent')};
+    transition: 0.3s ease;
 `

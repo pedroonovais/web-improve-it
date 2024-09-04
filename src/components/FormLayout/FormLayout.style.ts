@@ -7,7 +7,6 @@ export const StyledFormLayout = styled.form`
     
     & label{
         cursor: pointer;
-        margin-bottom: 8px;
         font-size: 1.1rem;
     }
 
