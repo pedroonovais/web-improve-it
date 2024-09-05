@@ -9,6 +9,8 @@ const LazyMembers = lazy(() => import("./pages/Members/Members"))
 const LazyInitialForm = lazy(() => import("./pages/ServiceForm/InitialForm"))
 const LazyTypeServiceForm = lazy(() => import("./pages/ServiceForm/TypeServiceForm"))
 const LazySelectServiceForm = lazy(() => import("./pages/ServiceForm/SelectServiceForm"))
+const LazyConfirmServicesForm = lazy(() => import("./pages/ServiceForm/ConfirmServicesForm"))
+const LazyConfirmPortoCustomer = lazy(() => import("./pages/ServiceForm/ConfirmPortoCustomer"))
 
 function App() {
     return(
@@ -23,6 +25,8 @@ function App() {
                         <Route path="/atendimento" element={<LazyInitialForm />} />
                         <Route path="/atendimento/tipo-servico" element={<LazyTypeServiceForm />} />
                         <Route path="/atendimento/selecionar-servicos" element={<LazySelectServiceForm />} />
+                        <Route path="/atendimento/confirmar-servicos" element={<LazyConfirmServicesForm />} />
+                        <Route path="/atendimento/confirmar-cliente-porto" element={<LazyConfirmPortoCustomer />} />
                     </Routes>
                 </Suspense>
             </BrowserRouter>

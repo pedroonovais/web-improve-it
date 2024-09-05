@@ -13,9 +13,7 @@ export default function TypeServiceForm() {
     const navigate = useNavigate()
 
     const handleNext = () => {
-        if(formData.tipoServico === "manutencao" || "manutencao-revisao"){
-            navigate('/atendimento/selecionar-servicos')
-        }
+        navigate('/atendimento/selecionar-servicos')
     }
 
     const handleBack = () => {
