@@ -2,7 +2,7 @@ import { createContext, useState, ReactNode } from 'react';
 
 interface FormData {
   tipoServico: string
-  servicosSelecionados: []
+  servicosSelecionados: string[]
   seguradoPorto: boolean | null
   marcaVeiculo: string
   anoFabricacao: number | null

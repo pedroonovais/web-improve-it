@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const StyledCheckbox = styled.input.attrs({ type: 'checkbox' })`
     position: absolute;
     opacity: 0;
-    pointer-events: none;
 `
 
 export const StyledLabel = styled.label<{ checked: boolean }>`

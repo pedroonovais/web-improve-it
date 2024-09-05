@@ -5,7 +5,7 @@ import { FlexRow } from "../../components/FlexRow/FlexRow";
 import { FormLayout } from "../../components/FormLayout/FormLayout";
 import { Hero } from "../../components/Hero/Hero";
 import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { FormContext } from "../../contexts/FormContext/FormContext";
 import { Checkbox } from "../../components/Checkbox/Checkbox";
 import { Wrapper } from "../../components/Wrapper/Wrapper";
@@ -24,10 +24,16 @@ export default function SelectServiceForm() {
         navigate('/atendimento/tipo-servico')
     }
 
-    const [isChecked, setIsChecked] = useState(false)
-
-    const handleChange = () => {
-        setIsChecked(!isChecked)
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { value } = event.target;
+        const isSelected = formData.servicosSelecionados.includes(value)
+    
+        setFormData({
+            ...formData,
+            servicosSelecionados: isSelected
+                ? formData.servicosSelecionados.filter((item) => item !== value)
+                : [...formData.servicosSelecionados, value]
+        })
     }
 
     return (
@@ -37,154 +43,154 @@ export default function SelectServiceForm() {
                 <Wrapper>
                     <Checkbox 
                         onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
                         id="alinhamento-direcao" 
-                        value="Alinhamento de Direção">
+                        value="Alinhamento de Direção"
+                        checked={formData.servicosSelecionados.includes("Alinhamento de Direção")}
+                    >
                         Alinhamento de Direção
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Bateria">
+                        onChange={handleChange}  
+                        id="bateria" 
+                        value="Bateria"
+                        checked={formData.servicosSelecionados.includes("Bateria")}
+                    >
                         Bateria
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Discos e pastilha de freio">
+                        onChange={handleChange}  
+                        id="discos-e-pastilha-de-freio" 
+                        value="Discos e pastilha de freio"
+                        checked={formData.servicosSelecionados.includes("Discos e pastilha de freio")}
+                    >
                         Discos e pastilha de freio
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Injeção eletrônica">
+                        onChange={handleChange}  
+                        id="injecao-eletronica" 
+                        value="Injeção eletrônica"
+                        checked={formData.servicosSelecionados.includes("Injeção eletrônica")}
+                    >
                         Injeção eletrônica
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Amortecedor e molas">
+                        onChange={handleChange}  
+                        id="amortecedor-e-molas" 
+                        value="Amortecedor e molas"
+                        checked={formData.servicosSelecionados.includes("Amortecedor e molas")}
+                    >
                         Amortecedor e molas
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Cabos">
+                        onChange={handleChange}  
+                        id="cabos" 
+                        value="Cabos"
+                        checked={formData.servicosSelecionados.includes("Cabos")}
+                    >
                         Cabos
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Embreagem">
+                        onChange={handleChange}  
+                        id="embreagem" 
+                        value="Embreagem"
+                        checked={formData.servicosSelecionados.includes("Embreagem")}
+                    >
                         Embreagem
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Paletas do limpador">
+                        onChange={handleChange}  
+                        id="paletas-do-limpador" 
+                        value="Paletas do limpador"
+                        checked={formData.servicosSelecionados.includes("Paletas do limpador")}
+                    >
                         Paletas do limpador
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Cambagem e Caster">
+                        onChange={handleChange}  
+                        id="cambagem-e-caster" 
+                        value="Cambagem e Caster"
+                        checked={formData.servicosSelecionados.includes("Cambagem e Caster")}
+                    >
                         Cambagem e Caster
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Extintor de Incêndio">
+                        onChange={handleChange}  
+                        id="extintor-de-incendio" 
+                        value="Extintor de Incêndio"
+                        checked={formData.servicosSelecionados.includes("Extintor de Incêndio")}
+                    >
                         Extintor de Incêndio
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Suspensão">
+                        onChange={handleChange}  
+                        id="suspensao" 
+                        value="Suspensão"
+                        checked={formData.servicosSelecionados.includes("Suspensão")}
+                    >
                         Suspensão
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Correia do motor">
+                        onChange={handleChange}  
+                        id="correia-do-motor" 
+                        value="Correia do motor"
+                        checked={formData.servicosSelecionados.includes("Correia do motor")}
+                    >
                         Correia do motor
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Filtros">
+                        onChange={handleChange}  
+                        id="filtros" 
+                        value="Filtros"
+                        checked={formData.servicosSelecionados.includes("Filtros")}
+                    >
                         Filtros
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Troca de óleo">
+                        onChange={handleChange}  
+                        id="troca-de-oleo" 
+                        value="Troca de óleo"
+                        checked={formData.servicosSelecionados.includes("Troca de óleo")}
+                    >
                         Troca de óleo
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Balanceamento de rodas">
+                        onChange={handleChange}  
+                        id="balanceamento-de-rodas" 
+                        value="Balanceamento de rodas"
+                        checked={formData.servicosSelecionados.includes("Balanceamento de rodas")}
+                    >
                         Balanceamento de rodas
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Direção">
+                        onChange={handleChange}  
+                        id="direcao" 
+                        value="Direção"
+                        checked={formData.servicosSelecionados.includes("Direção")}
+                    >
                         Direção
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Troca de pneus">
+                        onChange={handleChange}  
+                        id="troca-de-pneus" 
+                        value="Troca de pneus"
+                        checked={formData.servicosSelecionados.includes("Troca de pneus")}
+                    >
                         Troca de pneus
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Ar-condicionado (conserto e limpeza)">
+                        onChange={handleChange}  
+                        id="ar-condicionado" 
+                        value="Ar-condicionado (conserto e limpeza)"
+                        checked={formData.servicosSelecionados.includes("Ar-condicionado (conserto e limpeza)")}
+                    >
                         Ar-condicionado (conserto e limpeza)
                     </Checkbox>
                     <Checkbox 
-                        onChange={handleChange} 
-                        isChecked={isChecked} 
-                        name="" 
-                        id="" 
-                        value="Arrefecimento (veículo esquentando)">
+                        onChange={handleChange}  
+                        id="arrefecimento" 
+                        value="Arrefecimento (veículo esquentando)"
+                        checked={formData.servicosSelecionados.includes("Arrefecimento (veículo esquentando)")}
+                    >
                         Arrefecimento (veículo esquentando)
                     </Checkbox>
                 </Wrapper>

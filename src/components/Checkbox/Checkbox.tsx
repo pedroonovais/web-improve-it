@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { StyledCheckbox, StyledLabel } from "./Checkbox.style"
 
 interface CheckboxProps {
@@ -6,23 +5,21 @@ interface CheckboxProps {
     name?: string
     id?: string
     value?: string
+    checked?: boolean
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-    isChecked: boolean
 }
 
-export const Checkbox = ({ children, name, id, value, onChange, isChecked }: CheckboxProps) => {
-    
-    
+export const Checkbox = ({ children, name, id, value, checked = false, onChange }: CheckboxProps) => {
     return (
         <>
             <StyledCheckbox 
                 name={name} 
                 id={id} 
                 value={value} 
-                checked={isChecked}
+                checked={checked}
                 onChange={onChange}
             />
-            <StyledLabel htmlFor={id} checked={isChecked}>{children}</StyledLabel>
+            <StyledLabel htmlFor={id} checked={checked}>{children}</StyledLabel>
         </>
     )
 }

@@ -23,7 +23,7 @@ export default function TypeServiceForm() {
     }
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setFormData({ ...formData, tipoServico: event.target.value})
+        setFormData({ ...formData, tipoServico: event.target.value})        
     }
 
     return (
