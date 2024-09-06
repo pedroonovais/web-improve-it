@@ -7,6 +7,7 @@ import { Button } from "../../components/Button/Button";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { FormContext } from "../../contexts/FormContext/FormContext";
+import { UnorderedList } from "../../components/UnorderedList/UnorderedList";
 
 export default function ConfirmServicesForm (){
     const { formData } = useContext(FormContext)
@@ -24,11 +25,11 @@ export default function ConfirmServicesForm (){
         <Hero img={bannerAtendimento} height="100vh">
             <FormLayout>
                 <h2>Confirme as opções de serviço que você escolheu:</h2>
-                <ul>
+                <UnorderedList>
                     {formData.servicosSelecionados.map((servico, index) => {
                         return <li key={index}>- {servico}</li>
                     })}
-                </ul>
+                </UnorderedList>
             </FormLayout>
             <FlexRow>
                 <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
