@@ -14,11 +14,11 @@ export default function VehicleData () {
     const navigate = useNavigate()
     
     const handleNext = () => {
-        navigate('/atendimento/dados-veiculo')
+        navigate('/atendimento/cep')
     }
 
     const handleBack = () => {
-        navigate('/atendimento/confirmar-servicos')
+        navigate('/atendimento/confirmar-cliente-porto')
     }
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
