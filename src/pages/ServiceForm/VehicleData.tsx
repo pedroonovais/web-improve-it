@@ -77,7 +77,7 @@ export default function VehicleData () {
             </FormLayout>
             <FlexRow>
                 <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
-                <Button onClick={handleNext} >Confirmar</Button>
+                <Button onClick={handleNext} >Continuar</Button>
             </FlexRow>
         </Hero>
     )

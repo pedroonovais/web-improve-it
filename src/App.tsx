@@ -14,6 +14,8 @@ const LazyConfirmPortoCustomer = lazy(() => import("./pages/ServiceForm/ConfirmP
 const LazyVehicleData = lazy(() => import("./pages/ServiceForm/VehicleData"))
 const LazyCep = lazy(() => import("./pages/ServiceForm/Cep"))
 const LazyConfirmCep = lazy(() => import("./pages/ServiceForm/ConfirmCep"))
+const LazyConfirmBudget = lazy(() => import("./pages/ServiceForm/ConfirmBudget"))
+const LazyApprovedBudget = lazy(() => import("./pages/ServiceForm/ApprovedBudget"))
 
 function App() {
     return(
@@ -33,6 +35,8 @@ function App() {
                         <Route path="/atendimento/dados-veiculo" element={<LazyVehicleData />} />
                         <Route path="/atendimento/cep" element={<LazyCep />} />
                         <Route path="/atendimento/confirmar-cep" element={<LazyConfirmCep />} />
+                        <Route path="/atendimento/confirmar-orcamento" element={<LazyConfirmBudget />} />
+                        <Route path="/atendimento/orcamento-finalizado" element={<LazyApprovedBudget />} />
                     </Routes>
                 </Suspense>
             </BrowserRouter>

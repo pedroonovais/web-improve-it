@@ -16,4 +16,8 @@ export const StyledFormLayout = styled.form`
         cursor: pointer;
         margin: 0 0.1rem;
     }
+
+    & p{
+        margin-top: 10px;
+    }
 `;

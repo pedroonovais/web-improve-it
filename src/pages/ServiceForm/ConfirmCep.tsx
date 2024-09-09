@@ -25,7 +25,7 @@ export default function ConfirmCep () {
     const handleNext = () => {
         const logradouroValue = logradouro?.logradouro || ''
         setFormData({ ...formData, logradouro: logradouroValue})
-        navigate('/atendimento/confirmar-cep')
+        navigate('/atendimento/confirmar-orcamento')
     }
 
     const handleBack = () => {
