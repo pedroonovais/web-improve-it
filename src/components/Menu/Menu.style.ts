@@ -19,6 +19,10 @@ export const StyledHamburger = styled.div`
     justify-content: center; 
     gap: 0.5rem;
     font-size: 2.8rem;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
 `;
 
 export const StyledNavegation = styled.ul<{ isOpen: boolean }>`
@@ -31,18 +35,34 @@ export const StyledNavegation = styled.ul<{ isOpen: boolean }>`
     top: 6rem;
     transition: 250ms;
     top: ${({isOpen}) => (isOpen ? '30' : '-100%')};
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: end;
+        position: relative;
+        top: 0;
+    }
     
     & li{
         text-align: center;
         padding: 0.8rem;
         background-color: rgba(255, 255, 255, 0.5);
         backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+
+        @media (min-width: 768px) {
+            background: transparent;
+            backdrop-filter: unset;
+            display: flex;
+            flex-direction: column;
+            margin-right: 16px;
+            justify-content: center;
+        }   
     }
 
     & a{
         color: white;
         text-decoration: none;
+        transition: 200ms;
     }
     
     & a:visited{

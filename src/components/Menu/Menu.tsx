@@ -20,8 +20,8 @@ export const Menu = () => {
                 &#9776;
             </StyledHamburger>
             <StyledNavegation isOpen={isOpen}>
-                <Link to="/integrantes"><li>Integrantes</li></Link>
-                <Link to="/atendimento"><li>Iniciar Atendimento</li></Link>
+                <li><Link to="/integrantes">Integrantes</Link></li>
+                <li><Link to="/atendimento">Iniciar Atendimento</Link></li>
             </StyledNavegation>
         </StyledNav>
     )
