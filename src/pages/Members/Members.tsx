@@ -5,6 +5,7 @@ import { Section } from "../../components/Section/Section";
 import bannerIntegrantes from "/bannerEquipe.jpg"
 import fotoPedroNovais from "../../assets/pedroNovais.jpg"
 import { Footer } from "../../components/Footer/Footer";
+import { ImageArea } from "../../components/ImageArea/ImageArea";
 
 export default function Members(){
     return (
@@ -15,13 +16,15 @@ export default function Members(){
             <Section>
                 <h1>Integrantes:</h1>
                 <p>Link para o nosso repositório no github:</p>
-                <a href="https://github.com/pedroonovais/web-improve-it" target="_blank">https://github.com/pedroonovais/web-improve-it</a>
+                <p><a href="https://github.com/pedroonovais/web-improve-it" target="_blank">https://github.com/pedroonovais/web-improve-it</a></p>
                 <Card>
-                    <img src={fotoPedroNovais} alt="Pedro Novais" />
+                    <ImageArea>
+                        <img src={fotoPedroNovais} alt="Pedro Novais" />
+                    </ImageArea>
                     <h3>Pedro Novais</h3>
                     <p>RM: 555276</p>
                     <p>Turma: 1TDSPX</p>
-                    <a href="https://github.com/pedroonovais" target="_blank">Link GitHub</a>
+                    <p><a href="https://github.com/pedroonovais" target="_blank">Link GitHub</a></p>
                 </Card>
             </Section>
             <Footer />

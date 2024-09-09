@@ -36,4 +36,10 @@ export const StyledGroupLinks = styled.div`
     & img{
         width: 100%;
     }
+
+    @media (min-width: 768px) {
+        & img{
+            width: 30%;
+        }
+    }
 `;

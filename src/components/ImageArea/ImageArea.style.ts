@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-export const StyledImageArea = styled.div`
+export const StyledImageArea = styled.div<{ w?: string; h?: string }>`
     & img{
-        width: 100%;
+        width: ${({w}) => (w ? w : '100%')};
+        height: ${({h}) => (h ? h : '100%')};
     }
 `

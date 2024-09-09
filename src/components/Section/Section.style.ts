@@ -9,6 +9,10 @@ export const StyledSection = styled.section`
     }
 
     & a{
-        display: flex;
+        margin: 0 auto;
+    }
+
+    & p{
+        margin-bottom: 0.2rem;
     }
 `;
