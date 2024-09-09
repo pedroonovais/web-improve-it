@@ -13,7 +13,7 @@ export default function ConfirmPortoCustomer () {
     const navigate = useNavigate()
     
     const handleNext = () => {
-        navigate('/atendimento/confirmar-cliente-porto')
+        navigate('/atendimento/dados-veiculo')
     }
 
     const handleBack = () => {
