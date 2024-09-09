@@ -22,5 +22,10 @@ export const StyledHeroContent = styled.div`
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    margin: 0 1rem;
+    margin: 0 auto;
+    max-width: 768px;
+
+    @media (max-width: 768px) {
+        margin: 0 1rem;
+    }
 `;
