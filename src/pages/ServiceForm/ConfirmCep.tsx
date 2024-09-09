@@ -22,13 +22,15 @@ export default function ConfirmCep () {
     const navigate = useNavigate()
     const [logradouro, setLogradouro] = useState<ViaCepProps | null>(null)
     
-    const handleNext = () => {
+    const handleNext = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         const logradouroValue = logradouro?.logradouro || ''
         setFormData({ ...formData, logradouro: logradouroValue})
         navigate('/atendimento/confirmar-orcamento')
     }
 
-    const handleBack = () => {
+    const handleBack = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         navigate('/atendimento/cep')
     }
 
@@ -55,11 +57,11 @@ export default function ConfirmCep () {
                 ) : (
                     <p></p>
                 )}
+                <FlexRow>
+                    <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
+                    <Button onClick={handleNext} >Confirmar</Button>
+                </FlexRow>
             </FormLayout>
-            <FlexRow>
-                <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
-                <Button onClick={handleNext} >Confirmar</Button>
-            </FlexRow>
         </Hero>
     )
 }

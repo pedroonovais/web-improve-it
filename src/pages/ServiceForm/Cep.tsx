@@ -14,11 +14,13 @@ export default function Cep () {
     const navigate = useNavigate()
     const [inputCep, setInputCep] = useState('')
     
-    const handleNext = () => {
+    const handleNext = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         navigate('/atendimento/confirmar-cep')
     }
 
-    const handleBack = () => {
+    const handleBack = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         navigate('/atendimento/dados-veiculo')
     }
 
@@ -51,11 +53,11 @@ export default function Cep () {
                     maxLength={9}
                     onChange={handleChange}
                 ></Input>
+                <FlexRow>
+                    <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
+                    <Button onClick={handleNext} >Confirmar</Button>
+                </FlexRow>
             </FormLayout>
-            <FlexRow>
-                <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
-                <Button onClick={handleNext} >Confirmar</Button>
-            </FlexRow>
         </Hero>
     )
 }

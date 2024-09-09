@@ -13,11 +13,13 @@ export default function VehicleData () {
     const { formData, setFormData } = useContext(FormContext)
     const navigate = useNavigate()
     
-    const handleNext = () => {
+    const handleNext = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         navigate('/atendimento/cep')
     }
 
-    const handleBack = () => {
+    const handleBack = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         navigate('/atendimento/confirmar-cliente-porto')
     }
 
@@ -74,11 +76,11 @@ export default function VehicleData () {
                     onChange={handleChange}
                     placeholder="Modelo"
                 ></Input>
+                <FlexRow>
+                    <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
+                    <Button onClick={handleNext} >Continuar</Button>
+                </FlexRow>
             </FormLayout>
-            <FlexRow>
-                <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
-                <Button onClick={handleNext} >Continuar</Button>
-            </FlexRow>
         </Hero>
     )
 }

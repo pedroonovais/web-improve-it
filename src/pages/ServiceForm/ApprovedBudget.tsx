@@ -4,16 +4,12 @@ import { Hero } from "../../components/Hero/Hero";
 import { FormLayout } from "../../components/FormLayout/FormLayout";
 import { FlexRow } from "../../components/FlexRow/FlexRow";
 import { Button } from "../../components/Button/Button";
-import { useContext, useEffect } from "react";
-import { FormContext } from "../../contexts/FormContext/FormContext";
 import { ImageArea } from "../../components/ImageArea/ImageArea";
 
 export default function ConfirmBudget() {
-    const { formData } = useContext(FormContext)
-
-    useEffect(() => {
-        console.log(formData)
-    }, [formData])
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
+    }
     
     return (
         <Hero img={bannerAtendimento} height="100vh">
@@ -29,10 +25,10 @@ export default function ConfirmBudget() {
                 <p>
                     <strong>Telefone: </strong> (11) 2774-1507
                 </p>
+                <FlexRow>
+                    <Button onClick={handleClick}>Salvar via email</Button>
+                </FlexRow>
             </FormLayout>
-            <FlexRow>
-                <Button>Enviar informações via email</Button>
-            </FlexRow>
         </Hero>
     )
 }

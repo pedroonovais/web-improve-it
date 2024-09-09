@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
 export const StyledFormLayout = styled.form`
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+    
     & div{
         margin: 0.7rem 0;
     }

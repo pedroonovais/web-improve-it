@@ -13,11 +13,13 @@ export default function ConfirmServicesForm (){
     const { formData } = useContext(FormContext)
     const navigate = useNavigate()
     
-    const handleNext = () => {
+    const handleNext = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         navigate('/atendimento/confirmar-cliente-porto')
     }
 
-    const handleBack = () => {
+    const handleBack = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         navigate('/atendimento/selecionar-servicos')
     }
     
@@ -30,11 +32,11 @@ export default function ConfirmServicesForm (){
                         return <li key={index}>- {servico}</li>
                     })}
                 </UnorderedList>
+                <FlexRow>
+                    <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
+                    <Button onClick={handleNext} >Confirmar</Button>
+                </FlexRow>
             </FormLayout>
-            <FlexRow>
-                <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
-                <Button onClick={handleNext} >Confirmar</Button>
-            </FlexRow>
         </Hero>
     )
 }

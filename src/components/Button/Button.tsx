@@ -2,7 +2,7 @@ import { StyledButton } from "./Button.style"
 
 interface ButtonProps{
     children: React.ReactNode
-    onClick?: () => void
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
     bgColor?: string
     txtColor?: string
 }

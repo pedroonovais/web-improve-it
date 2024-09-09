@@ -12,11 +12,13 @@ export default function ConfirmPortoCustomer () {
     const { formData, setFormData } = useContext(FormContext)
     const navigate = useNavigate()
     
-    const handleNext = () => {
+    const handleNext = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         navigate('/atendimento/dados-veiculo')
     }
 
-    const handleBack = () => {
+    const handleBack = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         navigate('/atendimento/confirmar-servicos')
     }
 
@@ -41,11 +43,11 @@ export default function ConfirmPortoCustomer () {
                     <input type="radio" name="cliente-porto" id="no" value="false" onChange={handleChange}/>
                     <label htmlFor="no">Não</label>
                 </div>
+                <FlexRow>
+                    <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
+                    <Button onClick={handleNext} >Confirmar</Button>
+                </FlexRow>
             </FormLayout>
-            <FlexRow>
-                <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
-                <Button onClick={handleNext} >Confirmar</Button>
-            </FlexRow>
         </Hero>
     )
 }

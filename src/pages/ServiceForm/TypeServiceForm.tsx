@@ -12,11 +12,13 @@ export default function TypeServiceForm() {
     const { formData, setFormData } = useContext(FormContext)
     const navigate = useNavigate()
 
-    const handleNext = () => {
+    const handleNext = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         navigate('/atendimento/selecionar-servicos')
     }
 
-    const handleBack = () => {
+    const handleBack = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         navigate('/atendimento')
     }
 
@@ -40,11 +42,11 @@ export default function TypeServiceForm() {
                     <input type="radio" name="tipo-servico" id="manutencao-revisao" value="manutencao-revisao" onChange={handleChange}/>
                     <label htmlFor="manutencao-revisao">Ambos (manutenção + revisão).</label>
                 </div>
+                <FlexRow>
+                    <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
+                    <Button onClick={handleNext} >Continuar</Button>
+                </FlexRow>
             </FormLayout>
-            <FlexRow>
-                <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
-                <Button onClick={handleNext} >Continuar</Button>
-            </FlexRow>
         </Hero>
     )
 }

@@ -14,11 +14,13 @@ export default function SelectServiceForm() {
     const { formData, setFormData } = useContext(FormContext)
     const navigate = useNavigate()
 
-    const handleNext = () => {
+    const handleNext = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         navigate('/atendimento/confirmar-servicos')
     }
 
-    const handleBack = () => {
+    const handleBack = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         navigate('/atendimento/tipo-servico')
     }
 
@@ -35,7 +37,7 @@ export default function SelectServiceForm() {
     }
 
     return (
-        <Hero img={bannerAtendimento}>
+        <Hero img={bannerAtendimento} height="100vh">
             <FormLayout>
                 <h2>Escolha o serviço que deseja realizar (pode escolher mais de um):</h2>
                 <Wrapper>
@@ -192,11 +194,11 @@ export default function SelectServiceForm() {
                         Arrefecimento (veículo esquentando)
                     </Checkbox>
                 </Wrapper>
+                <FlexRow>
+                    <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
+                    <Button onClick={handleNext} >Continuar</Button>
+                </FlexRow>
             </FormLayout>
-            <FlexRow>
-                <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
-                <Button onClick={handleNext} >Continuar</Button>
-            </FlexRow>
         </Hero>
     )
 }

@@ -9,13 +9,13 @@ import bannerAtendimento from "/bannerAtendimento.jpg"
 export default function InitialForm() {
     const navigate = useNavigate()
 
-    // Encaminhando para a proxima pagina do formulario
-    const handleNext = () => {
+    const handleNext = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         navigate('/atendimento/tipo-servico')
     }
 
-    // Caso o usuario apertar em 'voltar' ele volta para a home
-    const handleBack = () => {
+    const handleBack = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault()
         navigate('/')
     }
 
@@ -23,11 +23,11 @@ export default function InitialForm() {
         <Hero img={bannerAtendimento} height="100vh">
             <FormLayout>
                 <h2>Vou te fazer algumas perguntas para saber o que você deseja, ok?</h2>
+                <FlexRow>
+                    <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
+                    <Button onClick={handleNext} >Continuar</Button>
+                </FlexRow>
             </FormLayout>
-            <FlexRow>
-                <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
-                <Button onClick={handleNext} >Continuar</Button>
-            </FlexRow>
         </Hero>
     )
 }
