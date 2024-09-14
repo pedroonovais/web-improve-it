@@ -4,6 +4,7 @@ import { Section } from "../../components/Section/Section";
 
 import bannerIntegrantes from "/bannerEquipe.jpg"
 import fotoPedroNovais from "../../assets/pedroNovais.jpg"
+import fotoViniciusBeda from "../../assets/viniciusBeda.jpg"
 import { Footer } from "../../components/Footer/Footer";
 import { ImageArea } from "../../components/ImageArea/ImageArea";
 
@@ -25,6 +26,15 @@ export default function Members(){
                     <p>RM: 555276</p>
                     <p>Turma: 1TDSPX</p>
                     <p><a href="https://github.com/pedroonovais" target="_blank">Link GitHub</a></p>
+                </Card>
+                <Card>
+                    <ImageArea>
+                        <img src={fotoViniciusBeda} alt="Vinicius Beda" />
+                    </ImageArea>
+                    <h3>Vinicius Beda</h3>
+                    <p>RM: 554914</p>
+                    <p>Turma: 1TDSPX</p>
+                    <p><a href="https://github.com/viniciusbeda" target="_blank">Link GitHub</a></p>
                 </Card>
             </Section>
             <Footer />
