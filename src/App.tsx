@@ -16,6 +16,7 @@ const LazyCep = lazy(() => import("./pages/ServiceForm/Cep"))
 const LazyConfirmCep = lazy(() => import("./pages/ServiceForm/ConfirmCep"))
 const LazyConfirmBudget = lazy(() => import("./pages/ServiceForm/ConfirmBudget"))
 const LazyApprovedBudget = lazy(() => import("./pages/ServiceForm/ApprovedBudget"))
+const LazyReviewData = lazy(() => import("./pages/ServiceForm/ReviewData"))
 
 function App() {
     return(
@@ -29,6 +30,7 @@ function App() {
                         {/* Rotas do formulario de atendimento */}
                         <Route path="/atendimento" element={<LazyInitialForm />} />
                         <Route path="/atendimento/tipo-servico" element={<LazyTypeServiceForm />} />
+                        <Route path="/atendimento/dados-revisao" element={<LazyReviewData />} />
                         <Route path="/atendimento/selecionar-servicos" element={<LazySelectServiceForm />} />
                         <Route path="/atendimento/confirmar-servicos" element={<LazyConfirmServicesForm />} />
                         <Route path="/atendimento/confirmar-cliente-porto" element={<LazyConfirmPortoCustomer />} />

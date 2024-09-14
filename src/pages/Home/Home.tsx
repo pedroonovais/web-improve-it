@@ -7,6 +7,7 @@ import carrosImage from "/carros.jpg"
 import { Hero } from "../../components/Hero/Hero";
 import { Footer } from "../../components/Footer/Footer";
 import { ImageArea } from "../../components/ImageArea/ImageArea";
+import { Wrapper } from "../../components/Wrapper/Wrapper";
 
 export default function Home(){
     return(
@@ -15,25 +16,27 @@ export default function Home(){
                 <h2>Bem-vindo ao CAP – Centro de Assistência Porto Seguro 😊. Queremos te oferecer a melhor opção em qualidade e custo para a manutenção de seu veículo.🚗</h2>
             </Hero>
             <Section>
-                <Card>
-                    <h1>Serviços Disponíveis:</h1>
-                    <ImageArea height="80%">
-                        <img src={alinhamentoImage} alt="Alinhamento" />
-                    </ImageArea>
-                    <p>Alinhamento de direção</p>
-                </Card>
-            </Section>
-            <Section>
-                <Card>
-                    <h1>Por que escolher a CAP?</h1>
-                    <ImageArea height="80%">
-                        <img src={carrosImage} alt="Alinhamento" />
-                    </ImageArea>
-                    <p>
-                        Nos Centros Automotivos Porto você encontra profissionais especializados para realizar serviços de manutenção e revisão do seu carro. 
-                        Com orçamentos assertivos e um processo cada vez mais digitalizado, oferecemos uma experiência rápida, segura e de ótima qualidade para segurados e não segurados.
-                    </p>
-                </Card>
+                <Wrapper>
+                    <Card>
+                        <h1>Serviços Disponíveis:</h1>
+                        <ImageArea height="80%">
+                            <img src={alinhamentoImage} alt="Alinhamento" />
+                        </ImageArea>
+                        <p>Alinhamento de direção</p>
+                    </Card>
+                </Wrapper>
+                <Wrapper>
+                    <Card>
+                        <h1>Por que escolher a CAP?</h1>
+                        <ImageArea height="80%">
+                            <img src={carrosImage} alt="Alinhamento" />
+                        </ImageArea>
+                        <p>
+                            Nos Centros Automotivos Porto você encontra profissionais especializados para realizar serviços de manutenção e revisão do seu carro. 
+                            Com orçamentos assertivos e um processo cada vez mais digitalizado, oferecemos uma experiência rápida, segura e de ótima qualidade para segurados e não segurados.
+                        </p>
+                    </Card>
+                </Wrapper>
             </Section>
             <Footer />
         </>

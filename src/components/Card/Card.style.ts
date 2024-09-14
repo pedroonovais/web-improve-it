@@ -1,19 +1,15 @@
 import styled from "styled-components"
 
 export const StyledCard = styled.div`
+    width: 750px;
     border-radius: 10px;
-    margin: 0 auto;
     padding: 1rem;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     max-width: 768px;    
+    margin-bottom: 1rem;
     
-    & *{
-        margin: 0 auto;
-    }
-
     & img{
         width: 80%;
         border-radius: 10px;
@@ -24,4 +20,7 @@ export const StyledCard = styled.div`
         margin-top: 0.5rem;
     }
 
+    @media (max-width: 768px) {
+        width: 450px;
+    }
 `;
