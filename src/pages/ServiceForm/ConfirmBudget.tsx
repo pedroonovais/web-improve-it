@@ -39,7 +39,7 @@ export default function ConfirmBudget() {
                     })}
                 </UnorderedList>
                 <p>
-                    <strong>Valor: R$ 1.100,85</strong>
+                    <strong>Valor: R$ 1.150,00</strong>
                 </p>
                 <FlexRow>
                     <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>

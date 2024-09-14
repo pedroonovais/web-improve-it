@@ -8,6 +8,10 @@ export const StyledHero = styled.header<{bgImg : string; height?: string}>`
     background-size: cover;
     height: ${({ height }) => height || 'auto'};
 
+    & p{
+        font-size: 0.8rem;
+    }
+
     & h1, h2, h3, h4, h5, h6{
         line-height: 2.1rem;
     }

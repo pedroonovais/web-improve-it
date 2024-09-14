@@ -14,6 +14,13 @@ export default function Home(){
         <>
             <Hero img={bannerImage} btnAtendimento={true} height="95vh">
                 <h2>Bem-vindo ao CAP – Centro de Assistência Porto Seguro 😊. Queremos te oferecer a melhor opção em qualidade e custo para a manutenção de seu veículo.🚗</h2>
+                <br />
+                <p>Respeitamos os seus Dados Pessoais. Ao prosseguir, você concordará com os
+                    termos de serviço da Porto Seguro e compartilhará voluntariamente seus dados
+                    pessoais, os quais serão utilizados exclusivamente para execução deste serviço.
+                </p>
+                <br />
+                <br />
             </Hero>
             <Section>
                 <Wrapper>
