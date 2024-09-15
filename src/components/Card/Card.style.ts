@@ -7,7 +7,7 @@ export const StyledCard = styled.div`
     flex-direction: column;
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    max-width: 768px;    
+    max-width: 500px;    
     margin-bottom: 1rem;
     
     & img{
@@ -21,6 +21,6 @@ export const StyledCard = styled.div`
     }
 
     @media (max-width: 768px) {
-        width: 450px;
+        width: 90vw;
     }
 `;

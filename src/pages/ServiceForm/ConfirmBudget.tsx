@@ -36,8 +36,20 @@ export default function ConfirmBudget() {
             }else{
                 return "1.750,00"
             }
-        }else{
+        }else if ((formData.tipoServico === "manutencao")){
             return "1.150,00"
+        }else{
+            if (formData.kmRodados === "Até 50 mil Km"){
+                return "1.950,00"
+            }else if (formData.kmRodados === "Até 80 mil Km" || formData.kmRodados === "Até 100 mil Km"){
+                return "2.150,00"
+            }else if (formData.kmRodados === "Até 150 mil Km" || formData.kmRodados === "Até 200 mil Km"){
+                return "2.400,00"
+            }else if (formData.kmRodados === "Até 250 mil Km" || formData.kmRodados === "Até 300 mil Km"){
+                return "2.650,00"
+            }else{
+                return "2.900,00"
+            }
         }
     }
     

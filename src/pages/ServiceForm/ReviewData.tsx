@@ -7,7 +7,6 @@ import { FlexRow } from "../../components/FlexRow/FlexRow";
 import { Button } from "../../components/Button/Button";
 import { useContext, useEffect } from "react";
 import { FormContext } from "../../contexts/FormContext/FormContext";
-import { WrapperCheckbox } from "../../components/WrapperCheckbox/WrapperCheckbox";
 
 export default function ReviewData() {
     const { formData, setFormData } = useContext(FormContext)
@@ -38,14 +37,12 @@ export default function ReviewData() {
         <Hero img={bannerAtendimento} height="100vh">
             <FormLayout>
                 <h2>Por favor, indique a KM aproximada do veículo que deseja revisão:</h2>
-                <WrapperCheckbox>
-                    {listaOpcoes.map((item, index) => (
-                        <div key={index}>
-                            <input type="radio" name="km-rodados" id={item} value={item} onChange={handleChange}/>
-                            <label htmlFor={item}>{item}</label>
-                        </div>
-                    ))}
-                </WrapperCheckbox>
+                {listaOpcoes.map((item, index) => (
+                    <div key={index}>
+                        <input type="radio" name="km-rodados" id={item} value={item} onChange={handleChange}/>
+                        <label htmlFor={item}>{item}</label>
+                    </div>
+                ))}
                 <FlexRow>
                     <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
                     <Button onClick={handleNext} >Continuar</Button>

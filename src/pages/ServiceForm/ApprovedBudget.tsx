@@ -15,7 +15,9 @@ export default function ConfirmBudget() {
         <Hero img={bannerAtendimento} height="100vh">
             <FormLayout>
                 <h2>Parabéns, orçamento finalizado!</h2>
-                <p>CAP Indicada: Centro Automotivo Porto Seguro Conceição</p>
+                <p>
+                    <strong>CAP Indicada:</strong> Centro Automotivo Porto Seguro Conceição
+                </p>
                 <p>
                     <strong>Endereço: </strong> Av. Diederichsen, 1426 - Vila Guarani (Zona Sul), São Paulo - SP, 04310-001
                 </p>
