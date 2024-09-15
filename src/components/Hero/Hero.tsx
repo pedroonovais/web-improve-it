@@ -8,11 +8,12 @@ interface HeroProps{
     children: React.ReactNode
     btnAtendimento?: boolean
     height?: string
+    heightSmDv?: string
 }
 
-export const Hero = ({img, children, btnAtendimento, height}: HeroProps) => {
+export const Hero = ({img, children, btnAtendimento, height, heightSmDv}: HeroProps) => {
     return (
-        <StyledHero bgImg={img} height={height}>
+        <StyledHero bgImg={img} height={height} heightSmDv={heightSmDv}>
             <Menu />
             <StyledHeroContent>
                 {children}

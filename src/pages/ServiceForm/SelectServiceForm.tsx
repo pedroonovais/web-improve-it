@@ -43,7 +43,7 @@ export default function SelectServiceForm() {
     useEffect(() => {console.log(formData)}, [formData])
 
     return (
-        <Hero img={bannerAtendimento} height="100%">
+        <Hero img={bannerAtendimento} height="100vh" heightSmDv="auto">
             <FormLayout>
                 <h2>Escolha o serviço que deseja realizar (pode escolher mais de um):</h2>
                 <WrapperCheckbox>

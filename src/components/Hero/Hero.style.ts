@@ -1,16 +1,14 @@
 import styled from "styled-components";
 
-export const StyledHero = styled.header<{bgImg : string; height?: string}>`
+export const StyledHero = styled.header<{bgImg : string; height?: string; heightSmDv?: string;}>`
     display: flex;
     flex-direction: column;
     color: white;
     background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${props => props.bgImg}) no-repeat center;
     background-size: cover;
     height: ${({ height }) => height || 'auto'};
+    width: 100%;
 
-    & p{
-        font-size: 0.8rem;
-    }
 
     & h1, h2, h3, h4, h5, h6{
         line-height: 2.1rem;
@@ -18,6 +16,11 @@ export const StyledHero = styled.header<{bgImg : string; height?: string}>`
 
     & button{
         width: 100%
+    }
+
+    @media (max-width: 768px) {
+        height: ${({ heightSmDv }) => heightSmDv || '100vh'};
+        min-height: 100vh;
     }
 `;
 

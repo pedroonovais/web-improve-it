@@ -16,4 +16,5 @@ export const StyledLabel = styled.label<{ checked: boolean }>`
     color: ${({checked}) => (checked ? 'black' : 'white')};
     background-color: ${({checked}) => (checked ? 'white' : 'transparent')};
     transition: 0.3s ease;
+    font-size: 0.8rem !important;
 `

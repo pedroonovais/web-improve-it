@@ -35,7 +35,7 @@ export default function TypeServiceForm() {
             <FormLayout>
                 <h2>Você gostaria de realizar uma <u>manutenção</u> ou <u>revisão</u> em seu veículo?</h2>
                 <div>
-                    <input type="radio" name="tipo-servico" id="manutencao" value="manutencao" onChange={handleChange} checked/>
+                    <input type="radio" name="tipo-servico" id="manutencao" value="manutencao" onChange={handleChange}/>
                     <label htmlFor="manutencao">Manutenção: um conserto ou serviço específico.</label>
                 </div>
                 <div>

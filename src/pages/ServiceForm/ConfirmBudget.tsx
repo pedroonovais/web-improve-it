@@ -22,6 +22,24 @@ export default function ConfirmBudget() {
         event.preventDefault()
         navigate('/atendimento/confirmar-cep')
     }
+
+    const calculaPreco = () => {
+        if (formData.tipoServico === "revisao"){
+            if (formData.kmRodados === "Até 50 mil Km"){
+                return "800,00"
+            }else if (formData.kmRodados === "Até 80 mil Km" || formData.kmRodados === "Até 100 mil Km"){
+                return "1.000,00"
+            }else if (formData.kmRodados === "Até 150 mil Km" || formData.kmRodados === "Até 200 mil Km"){
+                return "1.250,00"
+            }else if (formData.kmRodados === "Até 250 mil Km" || formData.kmRodados === "Até 300 mil Km"){
+                return "1.500,00"
+            }else{
+                return "1.750,00"
+            }
+        }else{
+            return "1.150,00"
+        }
+    }
     
     return (
         <Hero img={bannerAtendimento} height="100vh">
@@ -31,7 +49,10 @@ export default function ConfirmBudget() {
                     <strong>Veículo:</strong> {formData.modelo} <br />
                     <strong>Data sugerida:</strong> 11/10/2024 <br />
                     <strong>Endereço:</strong> Av. Diederichsen, 1426 - Vila Guarani (Zona Sul), São Paulo - SP, 04310-001 <br />
-                    <strong>Serviços:</strong> <br />
+                    <strong>
+                        {formData.tipoServico === "revisao" || formData.tipoServico === "manutencao-revisao" ? `Revisão para veículos com: ${formData.kmRodados} rodados` : ""}
+                    </strong> <br />
+                    <strong>{formData.tipoServico === "manutencao" || formData.tipoServico === "manutencao-revisao"  ? "Serviços:" : ""}</strong> <br />
                 </p>
                 <UnorderedList>
                     {formData.servicosSelecionados.map((servico, index) => {
@@ -39,7 +60,7 @@ export default function ConfirmBudget() {
                     })}
                 </UnorderedList>
                 <p>
-                    <strong>Valor: R$ 1.150,00</strong>
+                    <strong>Valor: R$ {calculaPreco()}</strong>
                 </p>
                 <FlexRow>
                     <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
