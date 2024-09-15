@@ -37,7 +37,7 @@ export default function Members(){
                         <h3>Rodrigo Rios</h3>
                         <p>RM: 554826</p>
                         <p>Turma: 1TDSPX</p>
-                        <p><a href="https://github.com/bohac73" target="_blank">Link GitHub</a></p>
+                        <p><a href="https://github.com/RoRios" target="_blank">Link GitHub</a></p>
                     </Card>
                     <Card>
                         <ImageArea>
