@@ -5,6 +5,7 @@ import { Section } from "../../components/Section/Section";
 import bannerIntegrantes from "/bannerEquipe.jpg"
 import fotoPedroNovais from "../../assets/pedroNovais.jpg"
 import fotoViniciusBeda from "../../assets/viniciusBeda.jpg"
+import fotoRodrigoRios from "../../assets/rodrigoBohac.jpg"
 import { Footer } from "../../components/Footer/Footer";
 import { ImageArea } from "../../components/ImageArea/ImageArea";
 import { Wrapper } from "../../components/Wrapper/Wrapper";
@@ -31,12 +32,12 @@ export default function Members(){
                     </Card>
                     <Card>
                         <ImageArea>
-                            <img src={fotoPedroNovais} alt="Pedro Novais" />
+                            <img src={fotoRodrigoRios} alt="Rodrigo Rios" />
                         </ImageArea>
                         <h3>Rodrigo Rios</h3>
-                        <p>RM: XXXXXX</p>
+                        <p>RM: 554826</p>
                         <p>Turma: 1TDSPX</p>
-                        <p><a href="link" target="_blank">Link GitHub</a></p>
+                        <p><a href="https://github.com/bohac73" target="_blank">Link GitHub</a></p>
                     </Card>
                     <Card>
                         <ImageArea>
