@@ -5,7 +5,7 @@ import { FormLayout } from "../../components/FormLayout/FormLayout";
 import { FlexRow } from "../../components/FlexRow/FlexRow";
 import { Button } from "../../components/Button/Button";
 import { useNavigate } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { FormContext } from "../../contexts/FormContext/FormContext";
 import { Select } from "../../components/Select/Select";
 
@@ -39,6 +39,10 @@ export default function VehicleData() {
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         switch (event.target.id) {
             case "marca":
+                setListModelosVeiculo([]);
+                setListaAnosVeiculo([]);
+                setSelecionouCampoModelo(false);
+
                 setFormData({ ...formData, marcaVeiculo: event.target.value });
 
                 // Pegando os modelos da marca
@@ -61,10 +65,8 @@ export default function VehicleData() {
                 break;
             case "modelo":
                 const value = event.target.value;
-                const codModelo = parseInt(value.split("-")[0].trim());
-                const nomeModelo = value.split("-")[1].trim();                
-
-                console.log("Cod: ", codModelo, "Modelo: ", nomeModelo);              
+                const codModelo = parseInt(value.split("?")[0].trim());
+                const nomeModelo = value.split("?")[1].trim();                            
 
                 setFormData({ ...formData, modelo: nomeModelo });
 
@@ -80,7 +82,6 @@ export default function VehicleData() {
     const getModelosVeiculoFipe = async (marca: string) => {
         const url = "https://parallelum.com.br/fipe/api/v1/carros/marcas";
         let codigoMarca = null;
-        console.log(marca);
 
         try {
             const response = await fetch(url);
@@ -91,12 +92,10 @@ export default function VehicleData() {
                     const codigo = data[i].codigo || "N/A";
                     const nomeMarca = data[i].nome || "N/A";
                     
-                    if (nomeMarca === marca) {                    
+                    if (nomeMarca === marca) {                                            
                         codigoMarca = parseInt(codigo);
                         setCodMarca(parseInt(codigo));
                         break
-                    }else{
-                        console.log("Nao achou");
                     }
                 }
 
@@ -104,20 +103,15 @@ export default function VehicleData() {
                 if (codigoMarca) {
                     const url2 = `https://parallelum.com.br/fipe/api/v1/carros/marcas/${codigoMarca}/modelos`;
                     
-                    console.log("Pegando modelos da marca: ", url2);
-                    
                     const response2 = await fetch(url2);
                     if (response2.ok) {
                         const data2 = await response2.json();
 
                         const modelos = await data2.modelos.map(
                             (modelo: { codigo: number; nome: string }) =>
-                                `${modelo.codigo} - ${modelo.nome}`
+                                `${modelo.codigo} ? ${modelo.nome}`
                         );
-                        setListModelosVeiculo(modelos);
-
-                        console.log(modelos);
-                        
+                        setListModelosVeiculo(modelos);                       
                     }
                 }
             }
@@ -129,18 +123,12 @@ export default function VehicleData() {
     };
 
     const getAnoModelo = async (codMarca: any, codModelo: number) => {
-        const url = `https://parallelum.com.br/fipe/api/v1/carros/marcas/${codMarca}/modelos/${codModelo}/anos`;
-
-        console.log("Cahmadno: ", url);
-        
+        const url = `https://parallelum.com.br/fipe/api/v1/carros/marcas/${codMarca}/modelos/${codModelo}/anos`;        
 
         try {
             const response = await fetch(url);
             if (response.ok) {
                 const data = await response.json();
-
-                console.log();
-                
 
                 setListaAnosVeiculo(data.map((ano: { codigo: string; nome: string}) => ano.nome))
             }
@@ -150,9 +138,9 @@ export default function VehicleData() {
         }
     };
 
-    useEffect(() => {
-        console.log(formData);
-    }, [formData]);
+    // useEffect(() => {
+    //     console.log(formData);
+    // }, [formData]);
 
     return (
         <Hero img={bannerAtendimento} height="100vh">
@@ -165,7 +153,7 @@ export default function VehicleData() {
                     <option value="" disabled selected>
                         Marca
                     </option>
-                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="GM - Chevrolet">GM - Chevrolet</option>
                     <option value="Ford">Ford</option>
                     <option value="Fiat">Fiat</option>
                     <option value="Volkswagen">Volkswagen</option>
@@ -189,7 +177,7 @@ export default function VehicleData() {
                     </option>
                     {listModelosVeiculo.map((item) => (
                         <option key={item} value={item}>
-                            {item.split("-")[1].trim()}
+                            {item.split("?")[1].trim()}
                         </option>
                     ))}
                 </Select>
@@ -209,27 +197,6 @@ export default function VehicleData() {
                     ))}
                 </Select>
 
-                {/* <Input 
-                    type="number"
-                    id="ano-fabricacao"
-                    name="ano-fabricacao"
-                    onChange={handleChange}
-                    placeholder="Ano de Fabricação"
-                ></Input>
-                <Input 
-                    type="number"
-                    id="ano-modelo"
-                    name="ano-modelo"
-                    onChange={handleChange}
-                    placeholder="Ano do modelo"
-                ></Input>
-                <Input 
-                    type="text"
-                    id="modelo"
-                    name="modelo"
-                    onChange={handleChange}
-                    placeholder="Modelo"
-                ></Input> */}
                 <FlexRow>
                     <Button
                         bgColor="white"
