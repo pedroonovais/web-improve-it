@@ -17,6 +17,9 @@ const LazyConfirmCep = lazy(() => import("./pages/ServiceForm/ConfirmCep"))
 const LazyConfirmBudget = lazy(() => import("./pages/ServiceForm/ConfirmBudget"))
 const LazyApprovedBudget = lazy(() => import("./pages/ServiceForm/ApprovedBudget"))
 const LazyReviewData = lazy(() => import("./pages/ServiceForm/ReviewData"))
+const LazyDiagnosis = lazy(() => import("./pages/ServiceForm/InitDiagnosis"))
+const LazyDescProblemDiagnosis = lazy(() => import("./pages/ServiceForm/DescProblemDiagnosis"))
+const LazyConfirmDataDiagnosis = lazy(() => import("./pages/ServiceForm/ConfirmDataDiagnosis"))
 
 function App() {
     return(
@@ -39,6 +42,10 @@ function App() {
                         <Route path="/atendimento/confirmar-cep" element={<LazyConfirmCep />} />
                         <Route path="/atendimento/confirmar-orcamento" element={<LazyConfirmBudget />} />
                         <Route path="/atendimento/orcamento-finalizado" element={<LazyApprovedBudget />} />
+                        <Route path="/atendimento/diagnostico" element={<LazyDiagnosis />} />
+                        <Route path="/atendimento/descricao-problema-diagnostico" element={<LazyDescProblemDiagnosis />} />
+                        <Route path="/atendimento/confirmar-dados-diagnostico" element={<LazyConfirmDataDiagnosis />} />
+
                     </Routes>
                 </Suspense>
             </BrowserRouter>

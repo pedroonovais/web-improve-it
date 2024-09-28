@@ -26,7 +26,12 @@ export default function ConfirmCep () {
         event.preventDefault()
         const logradouroValue = logradouro?.logradouro || ''
         setFormData({ ...formData, logradouro: logradouroValue})
-        navigate('/atendimento/confirmar-orcamento')
+        
+        if(formData.tipoServico === "diagnostico"){
+            navigate('/atendimento/confirmar-dados-diagnostico')    
+        }else{
+            navigate('/atendimento/confirmar-orcamento')
+        }
     }
 
     const handleBack = (event: React.MouseEvent<HTMLButtonElement>) => {

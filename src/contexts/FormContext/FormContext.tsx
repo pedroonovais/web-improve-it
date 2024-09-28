@@ -11,6 +11,8 @@ interface FormData {
     cep: string;
     logradouro: string;
     kmRodados: string;
+    problemaDiagnotisco: string;
+    descProblemaDiagnostico: string;
 }
 
 interface FormContextProps {
@@ -33,6 +35,8 @@ const defaultFormData: FormData = {
     cep: "",
     logradouro: "",
     kmRodados: "",
+    problemaDiagnotisco: "",
+    descProblemaDiagnostico: "",
 };
 
 const defaultContextValue: FormContextProps = {

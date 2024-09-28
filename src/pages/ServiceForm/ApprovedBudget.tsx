@@ -5,8 +5,12 @@ import { FormLayout } from "../../components/FormLayout/FormLayout";
 import { FlexRow } from "../../components/FlexRow/FlexRow";
 import { Button } from "../../components/Button/Button";
 import { ImageArea } from "../../components/ImageArea/ImageArea";
+import { useContext } from "react";
+import { FormContext } from "../../contexts/FormContext/FormContext";
 
 export default function ConfirmBudget() {
+    const { formData } = useContext(FormContext)
+
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault()
     }
@@ -14,7 +18,7 @@ export default function ConfirmBudget() {
     return (
         <Hero img={bannerAtendimento} height="100vh">
             <FormLayout>
-                <h2>Parabéns, orçamento finalizado!</h2>
+                <h2>{formData.tipoServico === "diagnostico" ? "diagnóstico" : "Parabéns, orçamento finalizado!"}</h2>
                 <p>
                     <strong>CAP Indicada:</strong> Centro Automotivo Porto Seguro Conceição
                 </p>

@@ -16,8 +16,10 @@ export default function TypeServiceForm() {
         event.preventDefault()
         if (formData.tipoServico === "manutencao"){
             navigate('/atendimento/selecionar-servicos')
-        }else{
+        }else if (formData.tipoServico === "revisao"){
             navigate('/atendimento/dados-revisao')
+        }else{
+            navigate('/atendimento/diagnostico')
         }
     }
 
@@ -42,9 +44,13 @@ export default function TypeServiceForm() {
                     <input type="radio" name="tipo-servico" id="revisao" value="revisao" onChange={handleChange}/>
                     <label htmlFor="revisao">Revisão: revisão dos principais itens de seu veículo.</label>
                 </div>
-                <div>
+                {/* <div>
                     <input type="radio" name="tipo-servico" id="manutencao-revisao" value="manutencao-revisao" onChange={handleChange}/>
                     <label htmlFor="manutencao-revisao">Ambos (manutenção + revisão).</label>
+                </div> */}
+                <div>
+                    <input type="radio" name="tipo-servico" id="diagnostico" value="diagnostico" onChange={handleChange}/>
+                    <label htmlFor="diagnostico">Diagnóstico: identificar e corrigir um problema do seu veículo.</label>
                 </div>
                 <FlexRow>
                     <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>
