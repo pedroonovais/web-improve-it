@@ -43,6 +43,13 @@ export default function VehicleData() {
                 setListaAnosVeiculo([]);
                 setSelecionouCampoModelo(false);
 
+                const modeloSelect = document.getElementById("modelo") as HTMLSelectElement;
+                const anoModelo = document.getElementById("ano-modelo") as HTMLSelectElement;
+                if (modeloSelect && anoModelo) {
+                    modeloSelect.selectedIndex = 0;
+                    anoModelo.selectedIndex = 0;
+                }
+
                 setFormData({ ...formData, marcaVeiculo: event.target.value });
 
                 // Pegando os modelos da marca

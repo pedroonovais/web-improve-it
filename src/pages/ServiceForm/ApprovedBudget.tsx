@@ -18,7 +18,10 @@ export default function ConfirmBudget() {
     return (
         <Hero img={bannerAtendimento} height="100vh">
             <FormLayout>
-                <h2>{formData.tipoServico === "diagnostico" ? "diagnóstico" : "Parabéns, orçamento finalizado!"}</h2>
+                <h2>{formData.tipoServico === "diagnostico" 
+                    ? "Recomendamos uma visita a CAP para averiguarmos melhor o seu ploblema!" 
+                    : "Parabéns, orçamento finalizado!"}
+                </h2>
                 <p>
                     <strong>CAP Indicada:</strong> Centro Automotivo Porto Seguro Conceição
                 </p>
