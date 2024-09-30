@@ -19,7 +19,7 @@ export default function ConfirmBudget() {
         <Hero img={bannerAtendimento} height="100vh">
             <FormLayout>
                 <h2>{formData.tipoServico === "diagnostico" 
-                    ? "Recomendamos uma visita a CAP para averiguarmos melhor o seu ploblema!" 
+                    ? "Confirmado! Esperamos você na CAP para averiguarmos melhor o seu problema!" 
                     : "Parabéns, orçamento finalizado!"}
                 </h2>
                 <p>

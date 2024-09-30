@@ -35,7 +35,7 @@ export default function TypeServiceForm() {
     return (
         <Hero img={bannerAtendimento} height="100vh">
             <FormLayout>
-                <h2>Você gostaria de realizar uma <u>manutenção</u> ou <u>revisão</u> em seu veículo?</h2>
+                <h2>Você gostaria de realizar uma <u>manutenção</u>, <u>revisão</u> ou <u>diagnóstico</u> em seu veículo?</h2><br />
                 <div>
                     <input type="radio" name="tipo-servico" id="manutencao" value="manutencao" onChange={handleChange}/>
                     <label htmlFor="manutencao">Manutenção: um conserto ou serviço específico.</label>
@@ -50,7 +50,7 @@ export default function TypeServiceForm() {
                 </div> */}
                 <div>
                     <input type="radio" name="tipo-servico" id="diagnostico" value="diagnostico" onChange={handleChange}/>
-                    <label htmlFor="diagnostico">Diagnóstico: identificar e corrigir um problema do seu veículo.</label>
+                    <label htmlFor="diagnostico">Diagnóstico: identificar e corrigir um problema no seu veículo.</label>
                 </div>
                 <FlexRow>
                     <Button bgColor="white" txtColor="var(--primary-color)" onClick={handleBack} >Voltar</Button>

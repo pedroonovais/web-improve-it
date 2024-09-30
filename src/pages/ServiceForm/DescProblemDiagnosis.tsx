@@ -46,7 +46,7 @@ export default function DescProblemDiagnosis() {
                         onChange={setDiagnostico}
                         rows={6}
                         cols={50}
-                        placeholder="Ao andar com carro, ouço um barulho na roda [informar quando ocorre e o que acontece]."
+                        placeholder="Exemplo: Ao andar com carro, ouço um barulho na roda [informar quando ocorre e o que acontece]."
                     />
                 </div>
 

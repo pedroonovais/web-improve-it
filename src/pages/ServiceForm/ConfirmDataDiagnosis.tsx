@@ -26,7 +26,7 @@ export default function ConfirmDataDiagnosis() {
     return (
         <Hero img={bannerAtendimento} height="100vh">
             <FormLayout>
-                <h2>Confirme as informações fornecidas para o diagnóstico</h2>
+                <h2>Confirme as informações fornecidas para o diagnóstico:</h2>
                 <p>
                     <strong>Veículo:</strong> {formData.marcaVeiculo} {formData.modelo}<br />
                     <strong>Problema relatado:</strong> {formData.problemaDiagnotisco}, {formData.descProblemaDiagnostico}
